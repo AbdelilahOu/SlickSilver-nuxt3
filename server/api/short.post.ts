@@ -4,12 +4,13 @@ import shortHash from "shorthash2";
 
 export default defineEventHandler(async (event) => {
   const { url } = await readBody(event);
+  console.log(url);
   try {
     // check if the link already exists
     const itDoes = await itExists(url);
     if (itDoes) {
       return {
-        slug: itDoes.slug,
+        slug: `${event.req.headers.origin}/api/link/${itDoes.slug}`,
       };
     }
     // since it doesnt lets create the slug
@@ -23,8 +24,9 @@ export default defineEventHandler(async (event) => {
       slug,
       idSlug,
     });
+    const newUrl = `${event.req.headers.origin}/api/link/${created.slug}`;
     return {
-      slug: created.slug,
+      slug: newUrl,
     };
   } catch (error) {
     sendError(event, error);

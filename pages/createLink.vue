@@ -16,7 +16,6 @@ const generateLink = async () => {
       method: "POST",
     });
     slug.value = data.value.slug;
-    // slug.value = res.data.value.slug;
     IsGenerated.value = true;
     setTimeout(() => {
       IsGenerated.value = false;

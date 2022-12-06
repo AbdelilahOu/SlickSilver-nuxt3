@@ -4,4 +4,10 @@ export default defineNuxtConfig({
   css: ["~/assets/tailwind.css"],
   modules: ["@nuxtjs/tailwindcss"],
   components: true,
+  // serverMiddleware: [
+  //   {
+  //     path: "api/:TheSlug",
+  //     handler: "./server/middleware/redirect.ts",
+  //   },
+  // ],
 });
