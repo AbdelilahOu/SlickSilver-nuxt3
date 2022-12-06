@@ -13,7 +13,9 @@
     "prisma": "^4.8.0-dev.21"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.4.6",
     "@prisma/client": "^4.8.0-dev.21",
+    "pinia": "^2.0.27",
     "shorthash2": "^1.0.3",
     "uniqid": "^5.4.0",
     "vue3-lottie": "^2.4.0"

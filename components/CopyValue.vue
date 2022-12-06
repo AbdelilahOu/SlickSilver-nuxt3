@@ -15,7 +15,7 @@ const CopyToClipBoard = () => {
 </script>
 
 <template>
-  <div class="w-full h-full grid grid-cols-[1fr_60px] gap-2">
+  <div class="w-full h-fit grid grid-cols-[1fr_60px] gap-2">
     <UiInput
       Type="text"
       :Value="ShortedLink == '' ? 'Wooow How empty' : ShortedLink"
@@ -24,7 +24,7 @@ const CopyToClipBoard = () => {
     <span
       @pointerdown="CopyToClipBoard"
       :class="[
-        'w-full bg-gray-100 cursor-pointer border-2 transition-all duration-200 border-gray-300 h-full flex justify-center items-center',
+        'w-full bg-gray-100 cursor-pointer border-2  transition-all duration-200 border-gray-300  flex justify-center items-center',
         IsCopied ? 'fill-green-400 border-green-400' : 'fill-gray-400',
       ]"
     >

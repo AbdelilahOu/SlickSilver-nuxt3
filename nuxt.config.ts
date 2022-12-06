@@ -2,7 +2,7 @@
 
 export default defineNuxtConfig({
   css: ["~/assets/tailwind.css"],
-  modules: ["@nuxtjs/tailwindcss"],
+  buildModules: ["@nuxtjs/tailwindcss", "@pinia/nuxt"],
   components: true,
   // serverMiddleware: [
   //   {
