@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
     const itDoes = await itExists(url);
     if (itDoes) {
       return {
-        slug: `${event.req.headers.origin}/api/link/${itDoes.slug}`,
+        slug: `${event.req.headers.origin}/api/L/${itDoes.slug}`,
       };
     }
     // since it doesnt lets create the slug
@@ -24,7 +24,7 @@ export default defineEventHandler(async (event) => {
       slug,
       idSlug,
     });
-    const newUrl = `${event.req.headers.origin}/api/link/${created.slug}`;
+    const newUrl = `${event.req.headers.origin}/api/L/${created.slug}`;
     return {
       slug: newUrl,
     };

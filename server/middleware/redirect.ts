@@ -1,7 +1,7 @@
 export default defineEventHandler(async (event) => {
   // since i havent found  way to specifi which route should this
   // middleware work for. i used if statement
-  if (event.req.url.includes("/api/link/")) {
+  if (event.req.url.includes("/api/L/")) {
     // turn the url into an array
     const splited = event.req.url.split("/");
     // get the slug from the array
