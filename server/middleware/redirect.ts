@@ -7,7 +7,12 @@ export default defineEventHandler(async (event) => {
     // get the slug from the array
     const slug = splited[splited.length - 1];
     // fetch the data from the api we made
-    const res: resData = await $fetch(`/api/slug/${slug}`);
+    const res: resData = await $fetch(`/api/slug`, {
+      method: "POST",
+      body: {
+        slug,
+      },
+    });
     // if the url exists redirect to that url
     if (res.url) {
       event.res.writeHead(301, {

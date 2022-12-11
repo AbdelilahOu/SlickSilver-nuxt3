@@ -4,7 +4,6 @@ import shortHash from "shorthash2";
 
 export default defineEventHandler(async (event) => {
   const { url } = await readBody(event);
-  console.log(url);
   try {
     // check if the link already exists
     const itDoes = await itExists(url);
