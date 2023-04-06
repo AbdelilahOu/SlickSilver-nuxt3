@@ -15,16 +15,10 @@ export default defineEventHandler(async (event) => {
     });
     // if the url exists redirect to that url
     if (res.url) {
-      event.res.writeHead(301, {
-        Location: res?.url,
-      });
-      event.res.end();
+      return sendRedirect(event, res.url, 301);
     }
     // if not send the our page
-    event.res.writeHead(301, {
-      Location: res?.url,
-    });
-    event.res.end();
+    return sendRedirect(event, event.req.headers.origin, 301);
   }
 });
 
