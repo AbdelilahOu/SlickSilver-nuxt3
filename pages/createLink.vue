@@ -2,6 +2,16 @@
 import { useToastStore } from "~~/stores/toastStore";
 import { storeToRefs } from "pinia";
 
+useHead({
+  title: "Shorten a link",
+  link: [
+    {
+      rel: "icon",
+      href: "https://nuxt.com/icon.png",
+    },
+  ],
+});
+
 const toastStore = useToastStore();
 
 const { ToastQueue } = storeToRefs(toastStore);

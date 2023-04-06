@@ -1,4 +1,14 @@
 <script setup lang="ts">
+useHead({
+  title: "SlickSilver",
+  link: [
+    {
+      rel: "icon",
+      href: "https://nuxt.com/icon.png",
+    },
+  ],
+});
+
 const Completed = () => {
   useRouter().push("/createLink");
 };
