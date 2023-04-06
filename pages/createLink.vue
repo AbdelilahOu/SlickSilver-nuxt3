@@ -51,7 +51,7 @@ const generateLink = async () => {
       <Navigation />
       <div class="w-full h-full flex items-center justify-center">
         <div
-          class="w-5/6 sm:w-2/3 grid grid-rows-[400px_1fr] h-full items-start gap-4 md:w-1/2"
+          class="w-5/6 sm:w-2/3 grid grid-rows-[200px_1fr] md:grid-rows-[400px_1fr] h-full items-start gap-4 md:w-1/2"
         >
           <div class="w-full h-full flex items-center justify-center">
             <transition>

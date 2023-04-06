@@ -24,8 +24,8 @@ const speed = 0.5;
         <client-only>
           <Vue3Lottie
             animationLink="https://assets8.lottiefiles.com/packages/lf20_bsbw5cpq.json"
-            :height="500"
-            :width="500"
+            :height="350"
+            :width="350"
             :speed="speed"
             @onLoopComplete="Completed"
           />
