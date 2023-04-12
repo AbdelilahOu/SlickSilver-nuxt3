@@ -12,13 +12,6 @@ useHead({
 useMeta({
   meta: [{ name: "description", content: "link shortner website" }],
 });
-
-useServerSeoMeta({
-  title: "linkshortner",
-  ogTitle: "linkshortner",
-  description: "This is linkshortner, let me tell you all about it.",
-  ogDescription: "This is linkshortner, let me tell you all about it.",
-});
 </script>
 
 <template>
