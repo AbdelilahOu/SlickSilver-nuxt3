@@ -7,9 +7,6 @@ useHead({
       href: "https://nuxt.com/icon.png",
     },
   ],
-});
-
-useHead({
   meta: [{ name: "description", content: "link shortner website" }],
 });
 </script>
