@@ -9,7 +9,7 @@ useHead({
   ],
 });
 
-useMeta({
+useHead({
   meta: [{ name: "description", content: "link shortner website" }],
 });
 </script>
