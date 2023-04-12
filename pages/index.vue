@@ -9,10 +9,16 @@ useHead({
   ],
 });
 
-const Completed = () => {
-  useRouter().push("/createLink");
-};
-const speed = 0.5;
+useMeta({
+  meta: [{ name: "description", content: "link shortner website" }],
+});
+
+useServerSeoMeta({
+  title: "linkshortner",
+  ogTitle: "linkshortner",
+  description: "This is linkshortner, let me tell you all about it.",
+  ogDescription: "This is linkshortner, let me tell you all about it.",
+});
 </script>
 
 <template>
@@ -26,8 +32,8 @@ const speed = 0.5;
             animationLink="https://assets8.lottiefiles.com/packages/lf20_bsbw5cpq.json"
             :height="350"
             :width="350"
-            :speed="speed"
-            @onLoopComplete="Completed"
+            :speed="0.5"
+            @onLoopComplete="$router.push('/createLink')"
           />
         </client-only>
       </div>
