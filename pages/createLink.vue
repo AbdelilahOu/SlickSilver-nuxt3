@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { useToastStore } from "~~/stores/toastStore";
-import { storeToRefs } from "pinia";
+import useToast from "~~/composables/useToast";
 
 useHead({
   title: "Shorten a link",
@@ -12,9 +11,7 @@ useHead({
   ],
 });
 
-const toastStore = useToastStore();
-
-const { ToastQueue } = storeToRefs(toastStore);
+const { ToastQueue, addToast, deleteToast } = useToast();
 
 const IsGenerated = ref<boolean>(false);
 
@@ -26,14 +23,14 @@ const inputChanged = (link: string) => (LongLink.value = link);
 
 const generateLink = async () => {
   if (LongLink.value) {
-    toastStore.addToast("Your link is being generated");
+    addToast("Your link is being generated");
     const { data } = await useFetch("/api/short", {
       body: {
         url: LongLink.value,
       },
       method: "POST",
     });
-    toastStore.deleteToast(0);
+    deleteToast(0);
     slug.value = data.value.slug;
     IsGenerated.value = true;
     setTimeout(() => {

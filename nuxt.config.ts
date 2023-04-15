@@ -2,12 +2,6 @@
 
 export default defineNuxtConfig({
   css: ["~/assets/tailwind.css"],
-  buildModules: ["@nuxtjs/tailwindcss", "@pinia/nuxt"],
+  buildModules: ["@nuxtjs/tailwindcss"],
   components: true,
-  // serverMiddleware: [
-  //   {
-  //     path: "api/:TheSlug",
-  //     handler: "./server/middleware/redirect.ts",
-  //   },
-  // ],
 });
