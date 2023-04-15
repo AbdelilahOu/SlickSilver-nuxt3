@@ -51,13 +51,14 @@ const generateLink = async () => {
           class="w-5/6 sm:w-2/3 grid grid-rows-[200px_1fr] md:grid-rows-[400px_1fr] h-full items-start gap-4 md:w-1/2"
         >
           <div class="w-full h-full flex items-center justify-center">
-            <transition>
+            <transition-group>
               <UiToast
-                v-if="ToastQueue[0]"
-                :text="ToastQueue[0].text"
-                :id="ToastQueue[0].id"
+                v-for="toast in ToastQueue"
+                :text="toast.text"
+                :id="toast.id"
+                :key="toast.id"
               />
-            </transition>
+            </transition-group>
           </div>
           <div class="flex flex-col gap-2">
             <div class="w-full h-fit grid grid-cols-[1fr_60px] gap-2">

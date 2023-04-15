@@ -1,5 +1,5 @@
 export default function () {
-  const ToastQueue = useState<{ text: string; id: number }[]>();
+  const ToastQueue = useState<{ text: string; id: number }[]>(() => []);
 
   const addToast = (text: string) => {
     const id = ToastQueue.value.length == 0 ? 0 : ToastQueue.value.length - 1;

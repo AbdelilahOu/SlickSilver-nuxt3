@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useToastStore } from "~~/stores/toastStore";
+import useToast from "~~/composables/useToast";
 
 const props = defineProps({
   text: {
@@ -14,7 +14,7 @@ const props = defineProps({
 
 const Progress = ref<number>(-10);
 const StopProgress = ref<ReturnType<typeof setInterval>>();
-const toastStore = useToastStore();
+const { deleteToast } = useToast();
 
 onMounted(() => {
   StopProgress.value = setInterval(() => {
@@ -26,7 +26,7 @@ onMounted(() => {
 onUnmounted(() => clearInterval(StopProgress.value));
 
 const abortProgress = () => {
-  toastStore.deleteToast(props.id);
+  deleteToast(props.id);
   clearInterval(StopProgress.value);
 };
 </script>
